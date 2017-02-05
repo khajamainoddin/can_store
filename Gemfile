@@ -16,7 +16,7 @@ gem 'coffee-rails', '~> 4.1.0'
 
 gem 'devise'
 
-
+gem 'rails_12factor'
 gem 'cancancan', '~> 1.10'
 
 # Use jquery as the JavaScript library
