@@ -1,12 +1,25 @@
-
-
+<div class="row">
 <h1>Listing Bills</h1>
+ <div class="pull-right">
+   
+ </div>
+</div>
+<div class="media">
 
-<table>
+  <div class="media-body">
+
+<table class="table table-hover">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Auditor</th>
+      <th>Select The Section</th>
+      <th>Dak Id No</th>
+      <th>Select The Div Range From</th>
+      <th>Select The Div Range To</th>
+      <th>Opening Date Of The Record</th>
+      <th>Closing Date Of The Record</th>
+      <th>Select Compactor No</th>
+      <th>Select The Shelf No</th>
+       <th>Auditor</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,16 +27,24 @@
   <tbody>
     <% @bills.each do |bill| %>
       <tr>
-        <td><%= bill.name %></td>
-        <td><%= bill.user %></td>
-        <td><%= link_to 'Show', bill %></td>
-        <td><%= link_to 'Edit', edit_bill_path(bill) %></td>
-        <td><%= link_to 'Destroy', bill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= bill.Select_The_Section %></td>
+        <td><%= bill.Dak_Id_No %></td>
+        <td><%= bill.Select_The_Div_Range_From %></td>
+        <td><%= bill.Select_The_Div_Range_To %></td>
+        <td><%= bill.Opening_Date_Of_The_Record %></td>
+        <td><%= bill.Closing_Date_Of_The_Record %></td>
+        <td><%= bill.Select_Compactor_No %></td>
+        <td><%= bill.Select_The_Shelf_No %></td>
+        <td><%= bill.user.name %></td>
+        <td><%= link_to 'Show', bill, class: 'btn btn-default' %></td>
+        <td><%= link_to 'Edit', edit_bill_path(bill), class: 'btn btn-mini btn-success' %></td>
+        <td><%= link_to 'Destroy', bill, method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' } %></td>
       </tr>
-      <% end %>
+    <% end %>
   </tbody>
 </table>
-
+</div>
+</div>
 <br>
 
 <%= link_to 'New Bill', new_bill_path %>

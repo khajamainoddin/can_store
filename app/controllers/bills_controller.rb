@@ -73,6 +73,6 @@ class BillsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bill_params
-      params.require(:bill).permit(:name, :user_id)
+      params.require(:bill).permit(:Select_The_Section, :Dak_Id_No, :Select_The_Div_Range_From, :Select_The_Div_Range_To, :Opening_Date_Of_The_Record, :Closing_Date_Of_The_Record, :Select_Compactor_No, :Select_The_Shelf_No, :user_id)
     end
 end

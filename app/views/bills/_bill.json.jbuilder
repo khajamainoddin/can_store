@@ -1,2 +1,2 @@
-json.extract! bill, :id, :name, :user_id, :created_at, :updated_at
+json.extract! bill, :id, :Select_The_Section, :Dak_Id_No, :Select_The_Div_Range, :Opening_Date_Of_The_Record, :Closing_Date_Of_The_Record, :Select_Compactor_No, :Select_The_Shelf_No, :created_at, :updated_at
 json.url bill_url(bill, format: :json)

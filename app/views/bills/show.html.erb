@@ -1,12 +1,44 @@
 
 <p>
-  <strong>Name:</strong>
-  <%= @bill.name %>
+  <strong>Select the section:</strong>
+  <%= @bill.Select_The_Section %>
+</p>
+<p>
+  <strong>Dak Id No</strong>
+  <%= @bill.Dak_Id_No %>
+</p>
+<p>
+  <strong>Select the div range from:</strong>
+  <%= @bill.Select_The_Div_Range_From %>
+</p>
+
+<p>
+  <strong>Select the div range to:</strong>
+  <%= @bill.Select_The_Div_Range_To %>
+</p>
+<p>
+  <strong>Opening date of the record:</strong>
+  <%= @bill.Opening_Date_Of_The_Record %>
+</p>
+
+<p>
+  <strong>Closing date of the record:</strong>
+  <%= @bill.Closing_Date_Of_The_Record %>
+</p>
+
+<p>
+  <strong>Select compactor no:</strong>
+  <%= @bill.Select_Compactor_No %>
+</p>
+
+<p>
+  <strong>Select the shelf no:</strong>
+  <%= @bill.Select_The_Shelf_No %>
 </p>
 
 <p>
   <strong>Auditor:</strong>
-  <%= @bill.user %>
+  <%= @bill.user.name %>
 </p>
 
 <%= link_to 'Edit', edit_bill_path(@bill) %> |

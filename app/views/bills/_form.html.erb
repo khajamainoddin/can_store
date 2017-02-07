@@ -1,3 +1,4 @@
+<div class="border-form-div">
 <%= form_for(@bill) do |f| %>
   <% if @bill.errors.any? %>
     <div id="error_explanation">
@@ -11,12 +12,93 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+<div class="row">
+<div class="col-md-6">
+ <div class="control-group">
+    <%= f.label :Select_The_Section, class: 'control-label' %><br>
+    <div class="controls">
+    <%= f.select(:Select_The_Section, options_for_select([['TADA', 'TADA'], ['MEDICALL', 'MEDICALL'], ['ADMIN', 'ADMIN']]), { include_blank: true}) %>
+      </div>
+      </div>
+  </div>
+
+  <div class="col-md-6">
+  <div class="control-group">
+    <%= f.label :Dak_Id_No, class: 'control-label' %><br>
+    <div class="controls">
+    <%= f.number_field :Dak_Id_No %>
+      </div>
+  </div>
+  </div>
+  </div>
+ 
+ <br>
+
+  <div class="row">
+  <div class="col-md-6">
+  <div class="control-group"><br>
+    <%= f.label :Select_The_Div_Range_From, class: 'control-label' %> <br>
+
+    <div class="controls">
+   
+    <%= f.number_field :Select_The_Div_Range_From %><br>
+    </div>
+    </div>
+    </div>
+    <div class="col-md-6">
+    <div class="control-group"><br>
+    <%= f.label :Select_The_Div_Range_To, class: 'control-label' %><br>
+    <div class="controls">
+     <%= f.number_field :Select_The_Div_Range_To %><br>
+  </div>
+  </div>
+  </div>
+
+  <div class="row">
+  <div class="col-md-6">
+  <div class="control-group"><br>
+    <%= f.label :Opening_Date_Of_The_Record, class: 'control-label' %><br>
+    <div class="controls">
+    <%= f.date_select :Opening_Date_Of_The_Record %><br><br>
+     </div>
+  </div>
+  </div>
+
+  <div class="col-md-6">
+  <div class="control-group"><br>
+    <%= f.label :Closing_Date_Of_The_Record, class: 'control-label' %><br>
+    <div class="controls">
+    <%= f.date_select :Closing_Date_Of_The_Record %>
+     </div>
+  </div>
+  </div>
+  </div>
+
+  <div class="row">
+  <div class="col-md-6">
+  <div class="control-group"><br>
+    <%= f.label :Select_Compactor_No, class: 'control-label' %><br>
+    <div class="controls">
+    <%= f.select(:Select_Compactor_No, options_for_select([['1', '1'], ['2', '2'],['3', '3'],['4', '4'],['5', '5'],['6', '6'],['7', '7'],['8', '8'],['9', '9'],['10', '10'],['11', '11'],['12', '12']]), { include_blank: true}) %>
+    </div>
+  </div>
   </div>
   
-  <div class="actions">
-    <%= f.submit %>
+  <div class="col-md-6">
+  <div class="control-group"><br>
+    <%= f.label :Select_The_Shelf_No, class: 'control-label' %><br>
+    <div class="controls">
+    <%= f.select(:Select_The_Shelf_No, options_for_select([['1', '1'],['2', '2'],['3', '3'],['4', '4'],['5', '5'],['6', '6'],['7', '7'],['8', '8'],['9', '9'],['10', '10']]), { include_blank: true}) %>
+     </div>
   </div>
+  </div>
+  </div>
+  <br>
+  <div class="control-group"><br> 
+  <div class="controls text-center">
+    <%= f.submit class: 'btn btn-default' %>
+  </div><br>
+  </div>
+  
 <% end %>
+</div>
