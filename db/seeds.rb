@@ -18,7 +18,7 @@ u3 = User.create({name: "noor", email: "noor@gmail.com", password: "noor1234", p
 u4 = User.create({name: "khaja", email: "khaja@gmail.com", password: "khaja1234", password_confirmation: "khaja1234", role_id: r4.id})
 
 
-b1 = Bill.create({name: "Medicall Bill", user_id: u2.id})
-b2 = Bill.create({name: "Tada Bill", user_id: u4.id})
-b3 = Bill.create({name: "LTC Bill", user_id: u3.id})
+b1 = Bill.create({user_id: u2.id})
+b2 = Bill.create({user_id: u4.id})
+b3 = Bill.create({user_id: u3.id})
 
