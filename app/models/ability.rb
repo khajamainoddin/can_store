@@ -12,7 +12,7 @@ class Ability
          can :create, Bill
        elsif user.aao?
         can :read, Bill
-         can :create, Bill
+         
          can :edit, Bill  
          can :update, Bill 
          can :destroy, Bill 
