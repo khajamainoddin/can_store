@@ -1,3 +1,7 @@
+ 
+        <%= link_to 'Edit', edit_bill_path(@bill) %> |
+<%= link_to 'Back', bills_path %>
+
 
 <p>
   <strong>Select the section:</strong>
@@ -38,8 +42,7 @@
 
 <p>
   <strong>Auditor:</strong>
-  <%= @bill.user.name %>
+  <%= @bill.user %>
 </p>
 
-<%= link_to 'Edit', edit_bill_path(@bill) %> |
-<%= link_to 'Back', bills_path %>
+

@@ -1,13 +1,22 @@
 class BillsController < ApplicationController
-
+  
+  before_action :authenticate_user!, except: [:show]
   before_filter :authenticate_user!
   load_and_authorize_resource
   
+ 
+  def search
+      if params[:search].present?
+        @bills = Bill.serach(params[:search])
+      else
+        @bills = Bill.all
+      end
+  end
 
   # GET /bills
   # GET /bills.json
   def index
-    #@bills = Bill.all
+    @bills = Bill.paginate(:page => params[:page]).order('id').per_page(5)
   end
 
   # GET /bills/1
@@ -27,7 +36,7 @@ class BillsController < ApplicationController
   # POST /bills
   # POST /bills.json
   def create
-    @bill.user_id = current_user.id
+    @bill.user_id = Bill.new(bill_params)#current_user.id
     #@bill = Bill.new(bill_params)
 
     respond_to do |format|
@@ -67,9 +76,9 @@ class BillsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    #def set_bill
-    #  @bill = Bill.find(params[:id])
-    #end
+    def set_bill
+      @bill = Bill.find(params[:id, :user_id])
+    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bill_params

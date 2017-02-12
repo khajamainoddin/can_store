@@ -1,7 +1,21 @@
+
 <div class="row">
+
+
+
+
+
 <h1>Listing Bills</h1>
  <div class="pull-right">
-   
+   <%= link_to 'New Bill', new_bill_path %>
+
+ 
+        <p>
+          <%= text_field_tag :search, params[:search], class: "form-control" %>
+          <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
+        </p>
+
+
  </div>
 </div>
 <div class="media">
@@ -11,14 +25,14 @@
 <table class="table table-hover">
   <thead>
     <tr>
-      <th>Select The Section</th>
+      <th>Section</th>
       <th>Dak Id No</th>
-      <th>Select The Div Range From</th>
-      <th>Select The Div Range To</th>
+      <th>Div Range From</th>
+      <th>Div Range To</th>
       <th>Opening Date Of The Record</th>
       <th>Closing Date Of The Record</th>
-      <th>Select Compactor No</th>
-      <th>Select The Shelf No</th>
+      <th>Compactor No</th>
+      <th>Shelf No</th>
        <th>Auditor</th>
       <th colspan="3"></th>
     </tr>
@@ -35,7 +49,7 @@
         <td><%= bill.Closing_Date_Of_The_Record %></td>
         <td><%= bill.Select_Compactor_No %></td>
         <td><%= bill.Select_The_Shelf_No %></td>
-        <td><%= bill.user.name %></td>
+        <td><%= bill.user %></td>
         <td><%= link_to 'Show', bill, class: 'btn btn-default' %></td>
         <td><%= link_to 'Edit', edit_bill_path(bill), class: 'btn btn-mini btn-success' %></td>
         <td><%= link_to 'Destroy', bill, method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' } %></td>
@@ -44,7 +58,11 @@
   </tbody>
 </table>
 </div>
+<div class="apple_pagination">
+   
+    <%= will_paginate @bills, :container => false %>
+  </div>
+
 </div>
 <br>
 
-<%= link_to 'New Bill', new_bill_path %>
